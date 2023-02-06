@@ -9,6 +9,18 @@ Ticari Elektronik İleti; Firmaların, mal ve hizmetlerini pazarlamak, işletmes
 
 Ticari elektronik iletinizin içeriği alıcıdan alınan onaya uygun olmalıdır.  
 
+<b> NETGSM, İleti Yönetim Sistemi Aracı Hizmet Sağlayıcı kurumdur.</b>
+
+# İletişim & Destek
+
+ Netgsm API Servisi ile alakalı tüm sorularınızı ve önerilerinizi teknikdestek@netgsm.com.tr adresine iletebilirsiniz.
+
+
+# Doküman 
+https://www.netgsm.com.tr/dokuman/
+ API Servisi için hazırlanmış kapsamlı dokümana ve farklı yazılım dillerinde örnek amaçlı hazırlanmış örnek kodlamalara 
+ [https://www.netgsm.com.tr/dokuman](https://www.netgsm.com.tr/dokuman) adresinden ulaşabilirsiniz.  
+ 
 ### Supported Laravel Versions
 
 Laravel 6.x, Laravel 7.x, Laravel 8.x, Laravel 9.x, 
