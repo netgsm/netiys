@@ -132,4 +132,33 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
         echo '<pre>';
 ```
 
+#### Başarılı istek örnek sonuç
+```
+Array
+(
+    [code] => 0
+    [error] => false
+    [query] => stdClass Object
+        (
+            [recipientType] => BIREYSEL
+            [recipient] => +9055xxxxxxx
+            [source] => HS_WEB
+            [type] => MESAJ
+            [consentDate] => 2023-01-24 09:40:00
+            [status] => ONAY
+            [creationDate] => 2023-01-26 09:48:54
+            [retailerAccessCount] => 0
+            [transactionId] => 52402b9a59206462a12b3477edd4590351819163280ddd4827d789bed80ea406
+        )
 
+)
+```
+
+#### Başarısız istek örnek sonuç
+```
+Array
+(
+    [code] => 50
+    [error] => Kayıt Bulunamadı.
+)
+```
