@@ -87,6 +87,34 @@ composer require netgsm/iys
         print_r($sonuc);
         echo '<pre>';
 ```
+#### Başarılı istek örnek sonuç
+```
+Array
+(
+    [code] => 0
+    [error] => false
+    [uid] => 59a3ec87-bca0-4c0a-b0d6-a0ff7375735b
+)
+
+```
+
+#### Başarısız istek örnek sonuç
+```
+Array
+(
+    [code] => 70
+    [error] => Hatalı JSON formatı.
+    [erroritem] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [recipient] =>  +90553xxxxxxx
+                )
+
+        )
+
+```
+
 ### iYS ADRES SORGULAMA
 
 Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini sorgulayabileceği servistir.
@@ -105,13 +133,3 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
 ```
 
 
-Başarılı istek örnek sonuç
-
-```
-Array
-(
-    [code] => 0
-    [error] => false
-    [uid] => 59a3ec87-bca0-4c0a-b0d6-a0ff7375735b
-)
-```
