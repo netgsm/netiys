@@ -86,7 +86,7 @@ composer require netgsm/iys
 
 ```
         use Netgsm\Iys\iys;
-    	  $data['type']='MESAJ';
+    	   $data['type']='MESAJ';
         $data['source']='HS_WEB';
         $data['recipient']='+90553xxxxxxx';
         $data['status']='ONAY';
@@ -133,7 +133,7 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
 
 ```
         use  Netgsm\Iys\iys;
-    	  $data['type']="MESAJ";
+    	   $data['type']="MESAJ";
         $data['recipient']="+90xxxxxxxxx";
         $data['recipientType']="BIREYSEL";
         $adressorgu=new iys;
