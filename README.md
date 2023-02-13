@@ -9,6 +9,18 @@ Ticari Elektronik İleti; Firmaların, mal ve hizmetlerini pazarlamak, işletmes
 
 Ticari elektronik iletinizin içeriği alıcıdan alınan onaya uygun olmalıdır.  
 
+<b> NETGSM, İleti Yönetim Sistemi Aracı Hizmet Sağlayıcı kurumdur.</b>
+
+# İletişim & Destek
+
+ Netgsm API Servisi ile alakalı tüm sorularınızı ve önerilerinizi teknikdestek@netgsm.com.tr adresine iletebilirsiniz.
+
+
+# Doküman 
+https://www.netgsm.com.tr/dokuman/
+ API Servisi için hazırlanmış kapsamlı dokümana ve farklı yazılım dillerinde örnek amaçlı hazırlanmış örnek kodlamalara 
+ [https://www.netgsm.com.tr/dokuman](https://www.netgsm.com.tr/dokuman) adresinden ulaşabilirsiniz.  
+ 
 ### Supported Laravel Versions
 
 Laravel 6.x, Laravel 7.x, Laravel 8.x, Laravel 9.x, 
@@ -16,6 +28,10 @@ Laravel 6.x, Laravel 7.x, Laravel 8.x, Laravel 9.x,
 ### Supported Php Versions
 
 PHP 7.2.5 ve üzeri
+
+### Supported Symfony Versions
+
+Symfony 4.x, Symfony 5.x, Symfony 6.x
 
 
 ### Kurulum
@@ -74,7 +90,7 @@ composer require netgsm/iys
 
 ```
         use Netgsm\Iys\iys;
-    	  $data['type']='MESAJ';
+    	   $data['type']='MESAJ';
         $data['source']='HS_WEB';
         $data['recipient']='+90553xxxxxxx';
         $data['status']='ONAY';
@@ -83,35 +99,80 @@ composer require netgsm/iys
         
         $islem=new iys;
         $sonuc=$islem->iys($data);
-        echo '<pre>';
-        print_r($sonuc);
-        echo '<pre>';
+        dd($sonuc);
+        die;
 ```
-### iYS ADRES SORGULAMA
-
-Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini sorgulayabileceği servistir.
-
-```
-        use  Netgsm\Iys\iys;
-    	  $data['type']="MESAJ";
-        $data['recipient']="+90xxxxxxxxx";
-        $data['recipientType']="BIREYSEL";
-        $adressorgu=new iys;
-        $sonuc=$adressorgu->iysadressorgula($data);
-        
-        echo '<pre>';
-            print_r($sonuc);
-        echo '<pre>';
-```
-
-
-Başarılı istek örnek sonuç
-
+#### Başarılı istek örnek sonuç
 ```
 Array
 (
     [code] => 0
     [error] => false
     [uid] => 59a3ec87-bca0-4c0a-b0d6-a0ff7375735b
+)
+
+```
+
+#### Başarısız istek örnek sonuç
+```
+Array
+(
+    [code] => 70
+    [error] => Hatalı JSON formatı.
+    [erroritem] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [recipient] =>  +90553xxxxxxx
+                )
+
+        )
+
+```
+
+### iYS ADRES SORGULAMA
+
+Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini sorgulayabileceği servistir.
+
+```
+        use  Netgsm\Iys\iys;
+    	   $data['type']="MESAJ";
+        $data['recipient']="+90xxxxxxxxx";
+        $data['recipientType']="BIREYSEL";
+        $adressorgu=new iys;
+        $sonuc=$adressorgu->iysadressorgula($data);
+        
+        dd($sonuc);
+        die;
+```
+
+#### Başarılı istek örnek sonuç
+```
+Array
+(
+    [code] => 0
+    [error] => false
+    [query] => stdClass Object
+        (
+            [recipientType] => BIREYSEL
+            [recipient] => +9055xxxxxxx
+            [source] => HS_WEB
+            [type] => MESAJ
+            [consentDate] => 2023-01-24 09:40:00
+            [status] => ONAY
+            [creationDate] => 2023-01-26 09:48:54
+            [retailerAccessCount] => 0
+            [transactionId] => 52402b9a59206462a12b3477edd4590351819163280ddd4827d789bed80ea406
+        )
+
+)
+```
+
+#### Başarısız istek örnek sonuç
+```
+Array
+(
+    [code] => 50
+    [error] => Kayıt Bulunamadı.
 )
 ```
