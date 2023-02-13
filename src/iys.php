@@ -8,7 +8,34 @@ use SimpleXMLElement;
 
 class iys
 {   
-   
+    private $username;
+    private $password;
+    private $brandcode;
+    public function __construct()
+    {
+     if(isset($_ENV['NETGSM_USERCODE']))
+      {
+          $this->username=$_ENV['NETGSM_USERCODE'];
+      }
+      else{
+          $this->username='x';
+      }
+      if(isset($_ENV['NETGSM_PASSWORD']))
+      {
+          $this->password=$_ENV['NETGSM_PASSWORD'];
+      }
+      else{
+          $this->password='x';
+      }
+      if(isset($_ENV['NETGSM_BRANDCODE']))
+      {
+          $this->brandcode=$_ENV['NETGSM_BRANDCODE'];
+      }
+      else{
+          $this->brandcode='x';
+      }
+        
+    }
     
     public function iys(array $data):array
     {
@@ -70,7 +97,7 @@ class iys
         }	
         try {
             $arr_acc = array(
-             "header" => array( "username" => env("NETGSM_USERCODE"),"password" => env("NETGSM_PASSWORD"),"brandCode" => env("NETGSM_BRANDCODE") ),
+             "header" => array( "username" => $this->username,"password" => $this->password,"brandCode" => $this->brandcode ),
              "body" => $bd
             );			
             $url_acc = "https://api.netgsm.com.tr/iys/add";  
@@ -110,7 +137,7 @@ class iys
     {
         try {
             $arr_acc = array(
-             "header" => array( "username" => env("NETGSM_USERCODE"),"password" => env("NETGSM_PASSWORD"),"brandCode" => env("NETGSM_BRANDCODE") ),
+             "header" => array( "username" => $this->username,"password" => $this->password,"brandCode" => $this->brandcode ),
              "body" => array(  
                   "data" => [array(
                      "type"       	=> $data['type'],		
