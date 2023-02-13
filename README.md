@@ -29,6 +29,10 @@ Laravel 6.x, Laravel 7.x, Laravel 8.x, Laravel 9.x,
 
 PHP 7.2.5 ve üzeri
 
+### Supported Symfony Versions
+
+Symfony 4.x, Symfony 5.x, Symfony 6.x
+
 
 ### Kurulum
 
@@ -95,9 +99,8 @@ composer require netgsm/iys
         
         $islem=new iys;
         $sonuc=$islem->iys($data);
-        echo '<pre>';
-        print_r($sonuc);
-        echo '<pre>';
+        dd($sonuc);
+        die;
 ```
 #### Başarılı istek örnek sonuç
 ```
@@ -139,9 +142,8 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
         $adressorgu=new iys;
         $sonuc=$adressorgu->iysadressorgula($data);
         
-        echo '<pre>';
-            print_r($sonuc);
-        echo '<pre>';
+        dd($sonuc);
+        die;
 ```
 
 #### Başarılı istek örnek sonuç
