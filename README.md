@@ -89,8 +89,8 @@ composer require netgsm/iys
 İYS API Servisi ile Hizmet sağlayıcıların Netgsm İYS İş ortağı aracılığıyla iletişim adreslerini yükleyebilirler.  
 
 ```
-        use Netgsm\Iys\iys;
-    	   $data['type']='MESAJ';
+	use Netgsm\Iys\iys;
+    	$data['type']='MESAJ';
         $data['source']='HS_WEB';
         $data['recipient']='+90553xxxxxxx';
         $data['status']='ONAY';
@@ -99,8 +99,7 @@ composer require netgsm/iys
         
         $islem=new iys;
         $sonuc=$islem->iys($data);
-        dd($sonuc);
-        die;
+        dd($sonuc
 ```
 #### Başarılı istek örnek sonuç
 ```
