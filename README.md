@@ -94,7 +94,7 @@ composer require netgsm/iys
 
 ```php
 	use Netgsm\Iys\iys;
-    	$data=array('type'=>'MESAJ','source'=>'HS_WEB','recipient'=>'+905531105200','recipientType'=>'BIREYSEL','status'=>'ONAY','consentDate'=>'2020-11-06 09:40:00');
+    	$data=array('type'=>'MESAJ','source'=>'HS_WEB','recipient'=>'+90553xxxxxxx,'recipientType'=>'BIREYSEL','status'=>'ONAY','consentDate'=>'2020-11-06 09:40:00');
         $islem=new iys;
         $sonuc=$islem->iys($data);
         dd($sonuc);
@@ -134,11 +134,12 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
 
 ```php
         use  Netgsm\Iys\iys;
-    	$data['type']="MESAJ";
-        $data['recipient']="+90xxxxxxxxx";
-        $data['recipientType']="BIREYSEL";
-        $adressorgu=new iys;
-        $sonuc=$adressorgu->iysadressorgula($data);
+    	$data=array('type'=>'MESAJ','recipient'=>'+90553xxxxxxx','recipientType'=>'BIREYSEL');
+        $adressorgu=new iys;
+        $sonuc=$adressorgu->iysadressorgula($data);
+        
+        dd($sonuc);
+        die;
         
         dd($sonuc);
         die;
