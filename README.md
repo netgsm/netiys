@@ -92,7 +92,7 @@ composer require netgsm/iys
 
 İYS API Servisi ile Hizmet sağlayıcıların Netgsm İYS İş ortağı aracılığıyla iletişim adreslerini yükleyebilirler.  
 
-```
+```php
 	use Netgsm\Iys\iys;
     	$data['type']='MESAJ';
         $data['source']='HS_WEB';
@@ -106,7 +106,7 @@ composer require netgsm/iys
         dd($sonuc
 ```
 #### Başarılı istek örnek sonuç
-```
+```php
 Array
 (
     [code] => 0
@@ -117,7 +117,7 @@ Array
 ```
 
 #### Başarısız istek örnek sonuç
-```
+```php
 Array
 (
     [code] => 70
@@ -137,7 +137,7 @@ Array
 
 Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini sorgulayabileceği servistir.
 
-```
+```php
         use  Netgsm\Iys\iys;
     	$data['type']="MESAJ";
         $data['recipient']="+90xxxxxxxxx";
@@ -150,7 +150,7 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
 ```
 
 #### Başarılı istek örnek sonuç
-```
+```php
 Array
 (
     [code] => 0
@@ -172,7 +172,7 @@ Array
 ```
 
 #### Başarısız istek örnek sonuç
-```
+```php
 Array
 (
     [code] => 50
