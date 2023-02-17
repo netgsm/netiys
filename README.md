@@ -94,16 +94,11 @@ composer require netgsm/iys
 
 ```php
 	use Netgsm\Iys\iys;
-    	$data['type']='MESAJ';
-        $data['source']='HS_WEB';
-        $data['recipient']='+90553xxxxxxx';
-        $data['status']='ONAY';
-        $data['consentDate']='2020-11-06 09:40:00';
-        $data['recipientType']='BIREYSEL';
-        
+    	$data=array('type'=>'MESAJ','source'=>'HS_WEB','recipient'=>'+905531105200','recipientType'=>'BIREYSEL','status'=>'ONAY','consentDate'=>'2020-11-06 09:40:00');
         $islem=new iys;
         $sonuc=$islem->iys($data);
-        dd($sonuc
+        dd($sonuc);
+        die;
 ```
 #### Başarılı istek örnek sonuç
 ```php
