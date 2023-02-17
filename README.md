@@ -141,8 +141,7 @@ Hizmet sağlayıcıların İYS veritabanında kayıtlı iletişim adreslerini so
         dd($sonuc);
         die;
         
-        dd($sonuc);
-        die;
+        
 ```
 
 #### Başarılı istek örnek sonuç
