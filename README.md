@@ -102,7 +102,7 @@ composer require netgsm/iys
 
 ```php
 	use Netgsm\Iys\iys;
-    	$data=array('type'=>'MESAJ','source'=>'HS_WEB','recipient'=>'+90553xxxxxxx,'recipientType'=>'BIREYSEL','status'=>'ONAY','consentDate'=>'2020-11-06 09:40:00');
+    	$data=array('type'=>'MESAJ','source'=>'HS_WEB','recipient'=>'+90553xxxxxxx','recipientType'=>'BIREYSEL','status'=>'ONAY','consentDate'=>'2020-11-06 09:40:00');
         $islem=new iys;
         $sonuc=$islem->iys($data);
         dd($sonuc);
