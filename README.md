@@ -196,7 +196,77 @@ Array
 <p>İYS izninin veya izin değişikliğinin hangi yolla yapıldığı fark etmeksizin webhook ile URL'e bildirilir.</p>
 </li>
 </ul>
-
+Urle bildirilen alanlar
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Anlamı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iyscode</code></td>
+<td>İYS'de kayıtlı numaranız</td>
+</tr>
+<tr>
+<td><code>brandcode</code></td>
+<td>İYS'de kayıtlı marka kodunuz</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>İletişim adres türü <strong>ARAMA</strong>, <strong>MESAJ</strong> ya da <strong>EPOSTA</strong> dan biri döner.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>izin alınan kaynağı ifade eder, <strong>HS_FIZIKSEL_ORTAM, HS_ISLAK_IMZA, HS_WEB, HS_CAGRI_MERKEZI, HS_SOSYAL_MEDYA, HS_EPOSTA, HS_MESAJ, HS_MOBIL, HS_EORTAM, HS_ETKINLIK, HS_2015, HS_ATM ve HS_KARAR</strong> ya da <strong> IYS_3338, IYS_CM, IYS_WEB, IYS_MOBIL, IYS_KISA_LINK </strong> değerlerinden biri döner.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><strong>ONAY ya da RET</strong> değeri döner.</td>
+</tr>
+<tr>
+<td><code>consentDate</code></td>
+<td>İzin alınan tarih bilgisi YYYY-mm-dd HH:mm:ss formatında döner.</td>
+</tr>
+<tr>
+<td><code>recipientType</code></td>
+<td><strong>BIREYSEL ya da TACIR</strong> olarak döner.</td>
+</tr>
+<tr>
+<td><code>retailercode</code></td>
+<td>İzin alınmasında aracılık eden bayinin iyscode bilgisidir.Nümerik bayi iyscode değeri döner.</td>
+</tr>
+<tr>
+<td><code>retailerAccess</code></td>
+<td>İzne erişimi olan bayilerin iyscode bilgisidir.	{123456,789456} formatında bayi iyscode bilgisi döner.</td>
+</tr>
+<tr>
+<td><code>submitid</code></td>
+<td>İzin yüklenirken oluşturulan, izin paketine ait id bilgisidir.	"40e6215d-b5c6-4896-987c-f30f3678f608" formatında id verisi döner.</td>
+</tr>
+<tr>
+<td><code>recipient</code></td>
+<td>İzin alınan kişinin telefon numarası ya da e-posta adresi bilgisdir.	Telefon numaraları E164 uluslararası([+][country code][area code][local phone number]) formatında döner.</td>
+</tr>
+<tr>
+<td><code>resultstatus</code></td>
+<td>İznin işlenme durum bilgisidir.	success iznin eklendiğini, failure iznin eklendiğini gösterir.</td>
+</tr>
+<tr>
+<td><code>errcode</code></td>
+<td>İzin işlenirken karşılaşılan hata kodu bilgisdir.	"H155" formatında İYS hata kodu formatındadır.</td>
+</tr>
+<tr>
+<td><code>errmsg</code></td>
+<td>İzin işlenirken karşılaşılan hata mesajı bilgisdir.	Metin formatında hata mesajı döner.</td>
+</tr>
+<tr>
+<td><code>creationdate</code></td>
+<td>İznin İYS tarafında işleme alındığı tarih bilgisidir.	YYYY-MM-DD HH:mm:ss formatında tarih verisi döner.</td>
+</tr>
+</tbody>
+</table>
 Servisten gelen cevap
 ```php
 {
