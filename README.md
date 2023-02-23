@@ -267,7 +267,7 @@ Urle bildirilen alanlar
 </tr>
 </tbody>
 </table>
-Servisten gelen cevap
+Servisten gelen cevap  
 ```php
 {
     "iyscode": 123456,
