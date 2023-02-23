@@ -266,8 +266,9 @@ Urle bildirilen alanlar
 <td>İznin İYS tarafında işleme alındığı tarih bilgisidir.	YYYY-MM-DD HH:mm:ss formatında tarih verisi döner.</td>
 </tr>
 </tbody>
-</table>
-Servisten gelen cevap  
+</table>  
+
+
 ```php
 {
     "iyscode": 123456,
