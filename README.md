@@ -197,7 +197,7 @@ Array
 </li>
 </ul>
 
-Servisten gelen Cevap
+Servisten gelen cevap
 ```php
 {
     "iyscode": 123456,
