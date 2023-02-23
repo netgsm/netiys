@@ -17,6 +17,7 @@ Ticari elektronik iletinizin içeriği alıcıdan alınan onaya uygun olmalıdı
 - [Kurulum](#kurulum)
 - [İys Adres Ekle](#iys-adres-ekleme)
 - [İys Adres Sorgula](#iys-adres-sorgulama)
+- [İys Webhook](#iys-webhook)
 
     
 # İletişim & Destek
@@ -182,3 +183,60 @@ Array
     [error] => Kayıt Bulunamadı.
 )
 ```
+### İys Webhook
+
+<ul>
+<li>
+<p>İYS'ye yüklenen izin ve ret bilgilerinin sonuç durumları, Webhook (Web kancası) uygulaması kullanılarak alınabilir. Bildirim işlemi webhook olarak tanımlanan URL adresine yapılır.</p>
+</li>
+<li>
+<p>Bu servisi kullanabilmek için URL'inizi tanımlamanız gerekmektedir. Bu işlem <a href="https://www.netgsm.com.tr/">www.netgsm.com.tr</a> adresine giriş sağladıktan sonra Dijital Servisler altındaki Netiys modülünden ayarlanabilir, NetİYS Modülü Uygulamalar bölümüne erişmek için, Netgsm web portala login olduktan sonra <a href="https://portal.netgsm.com.tr/webportal/servisler/netiys/webhook">tıklayabilirsiniz</a></p>
+</li>
+<li>
+<p>İYS izninin veya izin değişikliğinin hangi yolla yapıldığı fark etmeksizin webhook ile URL'e bildirilir.</p>
+</li>
+</ul>
+
+Servisten gelen Cevap
+```php
+{
+    "iyscode": 123456,
+    "brandcode": 123456,
+    "type": "MESAJ",
+    "source": "HS_ETKINLIK",
+    "status": "ONAY",
+    "consentdate": "2010-02-10 13:55:00",
+    "recipienttype": "TACIR",
+    "retailercode": "987654",
+    "retaileraccess": "",
+    "submitid": "40e6215d-b5c6-4896-987c-f30f3678f608",
+    "recipient": "+90312xxxxxxx",
+    "resultstatus": "failure",
+    "errcode": "H155",
+    "errmsg": "İzin tarihi (consentDate) kabul edilemedi.",
+    "creationdate": ""
+}
+```
+##### Laravel kullanıyorsanız veriyi aşağıdaki gibi çekebilirsiniz
+```php
+    use Illuminate\Http\Request;
+    public function index(Request $request)
+    {
+        
+        $data = json_decode($request->getContent(),false);
+        $data->recipienttype;
+        $data->retailercode;
+    }
+
+```
+##### Symfony kullanıyorsanız veriyi aşağıdaki gibi çekebilirsiniz
+```php
+    use Symfony\Component\HttpFoundation\Request;
+    public function index(Request $request)
+    {
+       $data = json_decode($request->getContent(),false);
+       $data->recipienttype;
+       $data->retailercode;
+        
+     }
+
